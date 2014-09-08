@@ -18,6 +18,8 @@ describe('Controller: NewGameCtrl', function () {
   }));
 
   it("should create a game with the current user's Id as the owner" , function () {
+    auth.getCurrentUser.andReturn({ email: "test@test.com"});
+
     NewGameCtrl.name = "Test Game";
     NewGameCtrl.create();
 
