@@ -1,0 +1,13 @@
+<div class="col-md-12">
+This is the play view.
+</div>
+
+<div class="container">
+    <table class="card">
+        <tbody>
+            <tr ng-repeat="row in play.squares">
+                <td ng-repeat="col in row" ng-bind="col" ng-class="play.isFreeSquare(col)"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
