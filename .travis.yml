@@ -1,9 +1,19 @@
 language: node_js
 node_js:
-  - '0.10'
-  - '0.11'
+- '0.10'
 before_script:
-  - npm install -g bower grunt-cli
-  - gem install sass
-  - bower install
+- npm install -g bower grunt-cli
+- gem install sass
+- bower install
 services: mongodb
+script: ./build.sh
+deploy:
+  provider: releases
+  api_key:
+    secure: CKMpmk2weMYouDK6SHPzPULzG9cnt2eF3xkWXXHekzz8Fk91HUxqG0JR6rlXfuRQgI2R0nG4UjjAJldFCqMKWlmgl3tJY39OP12nTZa5iE9lGJd7db5k+KUyKVSWPPLA6nCr9tNKGlAoQWS9WrHE8rphsa1O0moL1eRrKaox8mY=
+  file: 'deploy.tar.gz'
+  on:
+    repo: ssajous/mn-statefair-bingo
+    tags: true
+    all_branches: true
+
